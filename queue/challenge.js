@@ -1,4 +1,4 @@
-// Optionally: start with your code from LinkedList challenge.
+// Start with your code from LinkedList challenge.
 
 // Start with your code from last challenge.
 class Node {
@@ -80,38 +80,46 @@ class LinkedList {
   }
 }
 
-class Stack {
-  push(number) {
+class Queue {
+  constructor() {
+    this.elements = {};
+    this.node = 0;
+    this.nextNode = 0;
+  }
+  add(number) {
     // your code here
-
-    let node = new Node(number);
-    node.nextNode = this.head;
-    this.head = node;
+    this.elements[this.nextNode] = number;
+    this.nextNode++;
   }
 
-  pop() {
+  remove() {
     // your code here
-    let node = this.head;
-    this.head = this.head.nextNode;
-    return node.value;
+    const element = this.elements[this.node];
+    delete this.elements[this.node];
+    this.node++;
+    return element;
   }
 }
 
-const stack = new Stack();
-stack.push(3);
-stack.push(5);
-console.log(stack.pop());
-// => 5
+const queue = new Queue();
 
-stack.push(2);
-stack.push(7);
-console.log(stack.pop());
-// => 7
-
-console.log(stack.pop());
-// => 2
-
-console.log(stack.pop());
+queue.add(3);
+queue.add(5);
+console.log(queue.remove());
 // => 3
 
-module.exports = Stack;
+queue.add(2);
+queue.add(7);
+console.log(queue.remove());
+// => 5
+
+console.log(queue.remove());
+// => 2
+
+console.log(queue.remove());
+// => 7
+
+console.log(queue.remove());
+// => -1
+
+module.exports = Queue;
