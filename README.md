@@ -1,4 +1,8 @@
-# microverse-algorithm-challenges
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+# Microverse-Algorithm-Challenges
+
+![screenshot](./images/imagesJS-Algo.jpeg)
 
 ## How to solve thess challenges?
 
